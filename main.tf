@@ -1,8 +1,12 @@
-resource "azurerm_resource_group" "myresourcegroup" {
-  name     = "${var.prefix}-workshop"
-  location = "${var.location}"
-}
+#resource "azurerm_resource_group" "myresourcegroup" {
+#  name     = "${var.prefix}-workshop"
+#  location = "${var.location}"
+#}
 
+data "azurerm_resource_group" "myresourcegroup" {
+  name     = "rjackson-azdo-workshop"
+  location = "eastus"
+}
 
 resource "azurerm_virtual_network" "vnet" {
   name                = "${var.prefix}-vnet"
